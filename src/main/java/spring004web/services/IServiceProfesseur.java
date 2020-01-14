@@ -9,6 +9,6 @@ import spring004web.enumerations.eSexe;
 public interface IServiceProfesseur {
 	List<Professeur> recupererProfesseurs();
 	void creerProfesseur(final String pNom, final String pPrenom, final Date pDate, final String pAdresse, final eSexe pSexe);
-	void supprimerProfesseur(final Professeur pProf);
-	void modifierProfesseur(final Professeur pProf);
+	void supprimerProfesseur(final Integer pProfId);
+	void modifierProfesseur(final List<Professeur> plisteProf);
 }

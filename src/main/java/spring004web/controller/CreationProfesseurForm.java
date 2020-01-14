@@ -3,7 +3,8 @@ package spring004web.controller;
 import org.hibernate.validator.constraints.NotEmpty;
 
 public class CreationProfesseurForm {
-
+	
+	private Integer id;
 	@NotEmpty
 	private String nom;
 	
@@ -18,6 +19,14 @@ public class CreationProfesseurForm {
 
 	@NotEmpty
 	private String sexe;
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getNom() {
 		return nom;

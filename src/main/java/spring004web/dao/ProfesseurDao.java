@@ -51,8 +51,13 @@ public class ProfesseurDao implements IProfesseurDao {
 		final Expression<Boolean> lExpression = lCriteriaBuilder.equal(lPath, pProf.getId());
 		lCriteriaUpdate.where(lExpression);
 		lCriteriaUpdate.set("nom", pProf.getNom());
+		lCriteriaUpdate.set("prenom", pProf.getPrenom());
+		lCriteriaUpdate.set("adresse", pProf.getAdresse());
+		lCriteriaUpdate.set("datenaissance", pProf.getDatenaissance());
+		lCriteriaUpdate.set("sexe", pProf.getSexe());
 		final Query lQuery = entityManager.createQuery(lCriteriaUpdate);
 		final int lRowCount = lQuery.executeUpdate();
+		
 		if (lRowCount != 1) {
 			final org.hibernate.Query lHQuery = lQuery.unwrap(org.hibernate.Query.class);
 			final String lSql = lHQuery.getQueryString();

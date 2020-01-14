@@ -37,16 +37,21 @@ public class ServiceProfesseur implements IServiceProfesseur {
 	}
 
 	@Transactional
-	public void supprimerProfesseur(Professeur pProf) {
+	public void supprimerProfesseur(Integer pProfId) {
 		// TODO Auto-generated method stub
+		final Professeur pProf = new Professeur();
+		pProf.setId(pProfId);
 		dao.supprimerProfesseur(pProf);
 
 	}
 	
 	@Transactional
-	public void modifierProfesseur(Professeur pProf) {
+	public void modifierProfesseur(List<Professeur> plisteProf) {
 		// TODO Auto-generated method stub
-		dao.modifierProfesseur(pProf);
+		for(final Professeur pProf : plisteProf) {
+			dao.modifierProfesseur(pProf);
+		}
+		
 	}
 
 	
